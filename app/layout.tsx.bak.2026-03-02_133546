@@ -1,0 +1,62 @@
+import "./globals.css";
+import type { Metadata } from "next";
+import Sidebar from "./_components/Sidebar";
+export const metadata: Metadata = {
+  title: "SmartPonto Admin",
+  description: "Painel Global SaaS",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="pt-BR">
+      <body className="min-h-screen bg-gray-50 text-gray-900 flex">
+        {/* SIDEBAR */}
+        <aside className="w-72 bg-white border-r border-gray-200 p-6 flex flex-col">
+          <div className="flex items-center gap-2">
+            <div className="h-9 w-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-semibold">
+              SP
+            </div>
+            <div>
+              <div className="text-lg font-semibold leading-none">SmartPonto</div>
+              <div className="text-xs text-gray-500">Admin Global</div>
+            </div>
+          </div>
+
+          <nav className="mt-8 flex flex-col gap-2">
+            <Link
+              href="/"
+              className="rounded-xl px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
+            >
+              📊 Dashboard
+            </Link>
+
+            <Link
+              href="/tenants"
+              className="rounded-xl px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
+            >
+              🏢 Tenants
+            </Link>
+
+            <Link
+              href="/settings"
+              className="rounded-xl px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
+            >
+              ⚙️ Configurações
+            </Link>
+          </nav>
+
+          <div className="mt-auto text-xs text-gray-500">
+            SmartPonto • SaaS Global Panel
+          </div>
+        </aside>
+
+        {/* MAIN */}
+        <main className="flex-1 p-8">{children}</main>
+      </body>
+    </html>
+  );
+}

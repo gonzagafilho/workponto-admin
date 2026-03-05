@@ -1,0 +1,43 @@
+export default function Dashboard() {
+  return (
+    <div className="space-y-8">
+      <h2 className="text-3xl font-bold">Dashboard Global</h2>
+
+      {/* CARDS */}
+      <div className="grid grid-cols-4 gap-6">
+        <div className="bg-[#1e293b] p-6 rounded-xl shadow-lg">
+          <p className="text-gray-400 text-sm">Tenants Ativos</p>
+          <h3 className="text-3xl font-bold text-green-400">6</h3>
+        </div>
+
+        <div className="bg-[#1e293b] p-6 rounded-xl shadow-lg">
+          <p className="text-gray-400 text-sm">Funcionários</p>
+          <h3 className="text-3xl font-bold text-blue-400">128</h3>
+        </div>
+
+        <div className="bg-[#1e293b] p-6 rounded-xl shadow-lg">
+          <p className="text-gray-400 text-sm">Registros Hoje</p>
+          <h3 className="text-3xl font-bold text-purple-400">342</h3>
+        </div>
+
+        <div className="bg-[#1e293b] p-6 rounded-xl shadow-lg">
+          <p className="text-gray-400 text-sm">Receita Mensal</p>
+          <h3 className="text-3xl font-bold text-yellow-400">
+            R$ 4.870
+          </h3>
+        </div>
+      </div>
+
+      {/* ÁREA FUTURA DE GRÁFICO */}
+      <div className="bg-[#1e293b] p-8 rounded-xl shadow-lg">
+        <h3 className="text-xl font-semibold mb-4">
+          Crescimento da Plataforma
+        </h3>
+
+        <div className="h-40 flex items-center justify-center text-gray-500">
+          Gráfico em breve 📈
+        </div>
+      </div>
+    </div>
+  );
+}

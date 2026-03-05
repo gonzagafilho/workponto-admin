@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #020617; /* slate-950 */
+  color: #e2e8f0; /* slate-200 */
+}
+
+/* Fundo “neon” discreto (vende muito) */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(37,99,235,0.18), transparent 60%),
+    radial-gradient(700px 420px at 80% 20%, rgba(16,185,129,0.10), transparent 60%),
+    radial-gradient(800px 480px at 60% 90%, rgba(59,130,246,0.10), transparent 60%);
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrollbar mais clean (opcional, mas dá cara premium) */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.25); border-radius: 999px; }
+*::-webkit-scrollbar-track { background: rgba(2,6,23,0.2); }
